@@ -51,6 +51,63 @@ button.accept-policy {
   line-height: inherit;
 }
 
+/*
+    Nail Colors
+*/
+
+#swatches {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nailColor {
+    width: 50px;
+    height: 50px;
+    background-color: #1fccff;
+}
+
+#purple {
+    background-color: #571a5b;
+}
+
+#blue {
+    background-color: #65c2d2;
+}
+
+#red {
+    background-color: #8f1933;
+}
+
+#yellow {
+    background-color: #e9b82f;
+}
+
+#green {
+    background-color: #244620;
+}
+
+#iridescent {
+    background-color: #d2dee4;
+}
+
+#proprietary-orange {
+    background-color: #d78f42;
+}
+
+#silver {
+    background-color: #9d9995;
+}
+
+#black {
+    background-color: #101025;
+}
+
+#eggshell {
+    background-color: #f9f5e7;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

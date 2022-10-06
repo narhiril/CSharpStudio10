@@ -39,7 +39,7 @@ namespace SpaDay.Controllers
         }
 
         [HttpPost]
-        [Route("/spa")]
+        [Route("/spa/services")]
         public IActionResult Menu(string name, string skintype, string manipedi)
         {
             List<string> facials = new List<string>()
@@ -55,6 +55,11 @@ namespace SpaDay.Controllers
                     appropriateFacials.Add(facials[i]);
                 }
             }
+
+            ViewBag.ManiPedi = manipedi;
+            ViewBag.AppropriateFacials = appropriateFacials;
+            ViewBag.SkinType = skintype;
+            ViewBag.Name = name;
             return View();
         }
 

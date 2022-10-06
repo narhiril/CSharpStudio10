@@ -10,17 +10,47 @@
 
 <h1>Fancy Spa</h1>
 <div id="clientProfile">
+    <h3>Client Profile</h3>
+    <p>@ViewBag.Name</p>
 </div>
 <div id="servicesMenu">
 
     <h5>Facial Treatments</h5>
-    <p>Your //TODO: pass the skintype value in here// skin type is best suited to the follow facial types:</p>
+    <p>Your @ViewBag.SkinType skin type is best suited to the follow facial types:</p>
     
     <ul>
-        //TODO: iterate through appropriate facial treatments
+        @foreach (string treatment in ViewBag.AppropriateFacials)
+        {
+            <li>@treatment</li>
+        }
     </ul>
 
     <h5>Nail Services</h5>
-    // TODO: display a description for the nail service selected
-    
+    @switch (ViewBag.ManiPedi) 
+    {
+        case "manicure":
+            <p>Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
+            break;
+        case "pedicure":
+            <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
+            break;
+        case "both":
+            <p>Get the best of both worlds with our Top-Tier Mani-Pedi Package Dealeo™!</p>
+            <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
+            <p>Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
+            break;
+    }
+</div>
+
+<div id="swatches">
+    <div class="nailColor" id="purple"></div>
+    <div class="nailColor" id="blue"></div>
+    <div class="nailColor" id="silver"></div>
+    <div class="nailColor" id="black"></div>
+    <div class="nailColor" id="red"></div>
+    <div class="nailColor" id="green"></div>
+    <div class="nailColor" id="eggshell"></div>
+    <div class="nailColor" id="iridescent"></div>
+    <div class="nailColor" id="yellow"></div>
+    <div class="nailColor" id="proprietary-orange"></div>
 </div>
