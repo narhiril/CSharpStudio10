@@ -23,48 +23,14 @@ namespace SpaDay.Models
 
         public bool CheckSkinType(string skinType, string facialType)
         {
-
-            if (skinType == "oily")
+            return skinType switch
             {
-                if (facialType == "Microdermabrasion" || facialType == "Rejuvenating")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else if (skinType == "combination")
-            {
-                if (facialType == "Microdermabrasion" || facialType == "Rejuvenating" || facialType == "Enzyme Peel")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else if (skinType == "normal")
-            {
-                return true;
-            }
-            else if (skinType == "dry")
-            {
-                if (facialType == "Rejuvenating" || facialType == "Hydrofacial")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return true;
-            }
+                "oily" => (facialType == "Microdermabrasion" || facialType == "Rejuvenating"),
+                "combination" => (facialType == "Microdermabrasion" || facialType == "Rejuvenating" || facialType == "Enzyme Peel"),
+                "normal" => true,
+                "dry" => (facialType == "Rejuvenating" || facialType == "Hydrofacial"),
+                _ => true
+            };
         }
 
         public void SetFacials(String skinType)

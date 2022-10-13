@@ -20,7 +20,7 @@ namespace SpaDay.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return Redirect("/spa");
         }
 
         public IActionResult Privacy()
