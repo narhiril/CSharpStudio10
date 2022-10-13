@@ -25,10 +25,10 @@ namespace SpaDay.Models
         {
             return skinType switch
             {
-                "oily" => (facialType == "Microdermabrasion" || facialType == "Rejuvenating"),
-                "combination" => (facialType == "Microdermabrasion" || facialType == "Rejuvenating" || facialType == "Enzyme Peel"),
+                "oily" => facialType == "Microdermabrasion" || facialType == "Rejuvenating",
+                "combination" => facialType == "Microdermabrasion" || facialType == "Rejuvenating" || facialType == "Enzyme Peel",
                 "normal" => true,
-                "dry" => (facialType == "Rejuvenating" || facialType == "Hydrofacial"),
+                "dry" => facialType == "Rejuvenating" || facialType == "Hydrofacial",
                 _ => true
             };
         }
